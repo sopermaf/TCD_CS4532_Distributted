@@ -1,6 +1,8 @@
-import urllib2
+import socket
+sock = socket.socket()
+sock.connect(("localhost", 8000))
 
+sock.send("?message=test")
 
-print urllib2.urlopen("http://localhost:8000/echo-server.php?message=test").read()
-
-
+print sock.recv(1000)
+sock.close()
