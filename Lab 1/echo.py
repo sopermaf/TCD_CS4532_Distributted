@@ -1,8 +1,11 @@
 import socket
-sock = socket.socket()
-sock.connect(("localhost", 8000))
 
-sock.send("?message=test")
+s = socket.socket()         # Create a socket object
+host = "localhost"	    # On local host this time
+port = 8000                 # Correct Port Number Required
 
-print sock.recv(1000)
-sock.close()
+s.connect((host, port))
+s.send("echo-server.php?message=test")
+
+print s.recv(10)
+s.close
