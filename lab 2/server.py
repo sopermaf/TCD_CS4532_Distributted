@@ -1,5 +1,6 @@
 import socket
 import threading
+import os
 
 #shared data setup
 connections = []
@@ -48,8 +49,9 @@ thread2.start()
 
 
 #create TCP socket
+PORT = int(os.getenv('port_pass'))
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind(('localhost', 8007))
+sock.bind(('localhost', PORT))
 sock.listen(1)
 
 while True:

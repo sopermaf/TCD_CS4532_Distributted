@@ -2,7 +2,7 @@ import socket
 
 s = socket.socket()         # Create a socket object
 host = "localhost"	    # On local host this time
-port = 8007	            # Correct Port Number Required
+port = int(raw_input("Enter port number: "))  # Correct Port Number Required
 
 aim_message = "ferdia"
 message = "hello"
