@@ -10,5 +10,6 @@ message = "GET /echo-server.php?message=" + aim_message + " HTTP/1.1\r\n\r\n"
 s.connect((host, port))
 s.send(message)
 
+print message
 print s.recv(256)
 s.close
